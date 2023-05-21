@@ -1,2 +1,9 @@
-<input type="text" [(ngModel)]="searchText" placeholder="Search...">
-<button (click)="onSearch()">ricerca</button>
+<input type="text" #antognogni>
+<button (click)="onSearch(antognogni)">ricerca</button>
+<div *ngIf="risulrato && risulrato.length > 0">
+    <div *ngFor="let product of risulrato " >
+       <p>{{product.product_name}}</p>
+       <p>{{product.nutriments.carbohydrates}}</p>
+       <p>"{{product.categories}}"</p>
+    </div>
+   </div>
