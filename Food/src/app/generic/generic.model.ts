@@ -10,8 +10,12 @@ export class Generic{
     }
     trova(s : string){
         //ricerca del link 
-        const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${s}&page_size=2&json=true` 
+        const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${s}&page_size=2&json=true`;
         let ritorno = this.http.get<Root>(url);  // richiamo e retun del http
         return ritorno
+    }
+    ritorna(s : string | null ){
+        const url= `https://world.openfoodfacts.org/api/v0/product/${s}` ;
+        return this.http.get<Root>(url)
     }
 }

@@ -2,8 +2,8 @@
 <button (click)="onSearch(antognogni)">ricerca</button>
 <div *ngIf="risulrato && risulrato.length > 0">
     <div *ngFor="let product of risulrato " >
-       <p>{{product.product_name}}</p>
-       <p>{{product.nutriments.carbohydrates}}</p>
-       <p>"{{product.categories}}"</p>
+       <a routerLink="/food/{{product._id}}">{{product.product_name}}</a>
+      
+       
     </div>
    </div>
