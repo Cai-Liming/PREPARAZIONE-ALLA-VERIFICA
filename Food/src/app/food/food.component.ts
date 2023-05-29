@@ -21,7 +21,7 @@ export class FoodComponent {
     this.daa = Paramps.get('id') //  trova id 
     this.roo = this.generic.ritorna(this.daa);
     this.roo.subscribe((caso : Root) =>{this.risultato = caso.products}); 
-    console.log(this.risultato)
+    console.log(this.risultato) 
   }
 
 }

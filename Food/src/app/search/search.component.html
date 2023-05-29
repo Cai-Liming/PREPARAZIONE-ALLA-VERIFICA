@@ -3,6 +3,7 @@
 <div *ngIf="risulrato && risulrato.length > 0">
     <div *ngFor="let product of risulrato " >
        <a routerLink="/food/{{product._id}}">{{product.product_name}}</a>
+       <img {{product.image_url}}>
       
        
     </div>
