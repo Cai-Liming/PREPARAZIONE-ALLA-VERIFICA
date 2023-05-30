@@ -1,7 +1,8 @@
+<!--commit 3-->
 <input type="text" #antognogni>
 <button (click)="cerca(antognogni)">cerca Antognogni</button>
-
-<div>
-    {{ris.name}}
-    <img src="{{ris.image}}" alt="ciao">
+<!--commit 4-->
+<div *ngFor="let x of ris">
+    <a routerLink="/tv/{{x.show.id}}">{{x.show.name}}</a> 
+    <img src="{{x.show.image}}" alt="ciao">
 </div>

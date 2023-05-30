@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Root, Root2, Show } from '../app.model';
+import { Root } from '../app.model';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,17 +9,17 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-
+//commit 3
   string !: string;
-  obsTV !: Observable<Root2>;
-  ris !: Show;
+  obsTV !: Observable<Root>;
+  ris !: Root;
   constructor(public  http : HttpClient){
 
   }
   cerca(stringa : HTMLInputElement){
     this.string = stringa.value
-    this.obsTV = this.http.get<Root2>(`https://api.tvmaze.com/search/shows?q=${this.string}`)
-    this.obsTV.subscribe((data : Root2) => {this.ris = data.show})
+    this.obsTV = this.http.get<Root>(`https://api.tvmaze.com/search/shows?q=${this.string}`)
+    this.obsTV.subscribe((data : Root) => {this.ris = data})
   }
 
 }
